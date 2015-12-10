@@ -12,6 +12,10 @@ var SongQueue = Songs.extend({
       console.log(this);
       this.remove(this.at(0));
     });
+
+    this.on('ended', function(){
+      console.log('ended')
+    })
   },
 
   playFirst: function(){
