@@ -20,7 +20,12 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
       console.log('enqueue triggered. length is ', this.get('songQueue').length);
     }, this);
-
+    
+    this.get('songQueue').on('dequeue', function(){
+      if(this.get('currentSong') !== this.get("songQueue").at(0)) {
+        this.set('currentSong', this.get('songQueue').at(0)); 
+      }
+    }, this);
   }
 
 });
