@@ -7,6 +7,7 @@ var SongModel = Backbone.Model.extend({
   },
 
   enqueue: function(){
+    console.log("from LEV, SM triggers enqueue to AppM")
     this.trigger('enqueue', this);
   },
 
